@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sorkar Sihab Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+transition:.5s;
+}
+
+.dark{
+background:#111;
+}
+
+/* NAVBAR */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:#0005;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.navbar a:hover{
+color:#ffea00;
+transform:scale(1.1);
+}
+
+button{
+padding:10px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 15px rgba(255,255,255,0.6);
+background:#ffea00;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:60px;
+}
+
+.hero img{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+.hero h1{
+font-size:45px;
+}
+
+/* SECTION */
+.section{
+padding:40px;
+text-align:center;
+}
+
+.card{
+background:white;
+color:black;
+width:80%;
+margin:20px auto;
+padding:25px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ABOUT TEXT */
+.card p{
+line-height:1.7;
+font-size:16px;
+}
+
+/* MOTIVATION BOX */
+.motivation{
+margin-top:20px;
+padding:15px;
+border-left:5px solid #ffea00;
+background:#f7f7f7;
+border-radius:10px;
+font-style:italic;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 5px #fff;}
+to{box-shadow:0 0 20px #ffea00;}
+}
+
+/* SKILLS */
+.skills span{
+background:#764ba2;
+padding:10px;
+border-radius:20px;
+display:inline-block;
+margin:5px;
+color:white;
+transition:.3s;
+}
+
+.skills span:hover{
+transform:scale(1.2);
+background:#ffea00;
+color:black;
+}
+
+/* LOGIN */
+.login{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:black;
+padding:30px;
+border-radius:20px;
+}
+
+.login input{
+display:block;
+width:250px;
+padding:10px;
+margin:10px;
+}
+
+/* DASHBOARD */
+.dashboard{
+display:none;
+text-align:center;
+padding:40px;
+}
+
+.dark .card,
+.dark .login{
+background:#222;
+color:white;
+}
+
+.card i{
+font-size:20px;
+margin-right:8px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+<div class="logo">Sihab</div>
+
+<div>
+<a>Home</a>
+<a>About</a>
+<a>Projects</a>
+
+<a onclick="openLogin()" id="loginBtn">Login</a>
+<a onclick="showProfile()" id="profileBtn" style="display:none;">Profile</a>
+<a onclick="logout()" id="logoutBtn" style="display:none;">Logout</a>
+
+<button onclick="dark()">🌙</button>
+</div>
+
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<img src="profile.jpg">
+<h1>Sorkar Sihab</h1>
+<p>Web Developer | Designer</p>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+<h1>About Me</h1>
+
+<div class="card">
+
+<p>👋 Hello! I’m <strong>Sorkar Sihab</strong>, a passionate web developer and designer.</p>
+
+<p>💻 I create modern, responsive and user-friendly websites using HTML, CSS and JavaScript.</p>
+
+<p>🚀 I love building creative UI designs and portfolio websites.</p>
+
+<p>🎯 My goal is to become a professional full-stack developer.</p>
+
+<p>🌍 I always try to improve my skills every single day.</p>
+
+<div class="motivation">
+🔥 “Success doesn’t come from what you do occasionally, it comes from what you do consistently.”
+</div>
+
+</div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+<h1>My Skills</h1>
+<div class="skills">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Web Design</span>
+</div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section">
+<h1>Projects</h1>
+<div class="card">
+<h2>Portfolio Website</h2>
+<p>My personal website</p>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+<h1>Contact Me</h1>
+
+<div class="card">
+
+<p><i class="fa-solid fa-phone"></i> Phone:<br>
+<a href="tel:01313225030">01313225030</a></p>
+
+<br>
+
+<p><i class="fa-brands fa-whatsapp" style="color:green;"></i> WhatsApp:<br>
+<a href="https://wa.me/8801313225030" target="_blank">Chat WhatsApp</a></p>
+
+<br>
+
+<p><i class="fa-brands fa-youtube" style="color:red;"></i> YouTube:<br>
+<a href="https://www.youtube.com/@SSJERRY-y7p" target="_blank">My Channel</a></p>
+
+<br>
+
+<p><i class="fa-brands fa-facebook" style="color:blue;"></i> Facebook:<br>
+<a href="https://www.facebook.com/share/17wPR5sa4i/" target="_blank">Profile</a></p>
+
+</div>
+
+</div>
+
+<!-- LOGIN -->
+<div class="login" id="login">
+<h2>Login</h2>
+<input placeholder="Email">
+<input placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dash">
+<h1>Welcome Sihab 🎉</h1>
+<p>You are logged in</p>
+<br>
+<button onclick="logout()">Logout</button>
+</div>
+
+<footer>© 2026 Sorkar Sihab</footer>
+
+<script>
+
+function openLogin(){
+document.getElementById("login").style.display="block";
+}
+
+function login(){
+document.getElementById("login").style.display="none";
+document.getElementById("dash").style.display="block";
+
+document.getElementById("loginBtn").style.display="none";
+document.getElementById("profileBtn").style.display="inline";
+document.getElementById("logoutBtn").style.display="inline";
+}
+
+function logout(){
+document.getElementById("dash").style.display="none";
+
+document.getElementById("loginBtn").style.display="inline";
+document.getElementById("profileBtn").style.display="none";
+document.getElementById("logoutBtn").style.display="none";
+
+alert("Logout Successful!");
+}
+
+function showProfile(){
+document.getElementById("dash").style.display="block";
+}
+
+function dark(){
+document.body.classList.toggle("dark");
+}
+
+</script>
+
+</body>
+</html>
